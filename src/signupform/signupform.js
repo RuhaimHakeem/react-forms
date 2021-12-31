@@ -9,7 +9,7 @@ const SignUpForm = () => {
                 <input type="text" class = "icon" placeholder='Enter Phone Number ' />
                 <input type="text"placeholder='First name ' />
                 <input type="text"placeholder='Last name ' />
-                <input id="partitioned" type="text" maxlength="5" />
+                
 
             </div>    
             <input type='submit' value='Continue'/>   
