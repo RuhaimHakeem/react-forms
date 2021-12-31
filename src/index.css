@@ -1,13 +1,100 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@900&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Quicksand";
+  transform: scale(1.03);
+  transform-origin: 1 1;
+  margin-bottom: 40px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input, button{
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
 }
+
+.App{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.form{
+  display: block;
+  position: relative;
+}
+
+form .form-inner h2{
+  color: black;
+  font-size: 50px;
+  font-weight: bolder;
+  text-align: center;
+  font-family: "Roboto Slab", "serif";
+  margin-bottom: 10px;
+ 
+}
+p{
+  margin-bottom: 30px;
+  text-align: center;
+  color: #928686ec;
+}
+
+form .form-inner .form-group{
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+  
+}
+
+  form .form-inner .form-group input{
+
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    transition: 0.4s;
+    text-align: center;
+   
+    border-bottom: 1px solid  #f3610cec;
+    margin-bottom: 30px;
+}
+
+  form .form-inner .form-group .icon{
+
+    background: url("https://img.icons8.com/material-outlined/24/000000/iphone--v2.png") no-repeat right;
+}
+form .form-inner .form-group input:focus{
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+form .form-inner input[type = "submit"]{
+  display: inline-block;
+  padding: 20px 15px;
+  border-radius: 8px;
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  width: 300px;
+  border: 1000px;
+  text-align:center;
+  background-color: #f3610cec;
+
+  
+  
+  
+  
+
+}
+
