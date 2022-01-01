@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@900&display=swap");
 
 * {
   margin: 0;
@@ -11,14 +11,15 @@
   margin-bottom: 40px;
 }
 
-input, button{
+input,
+button {
   appearance: none;
   background: none;
   border: none;
   outline: none;
 }
 
-.App{
+.App {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -26,57 +27,52 @@ input, button{
   background-color: white;
 }
 
-.form{
+.form {
   display: block;
   position: relative;
 }
 
-form .form-inner h2{
+form .form-inner h2 {
   color: black;
   font-size: 50px;
   font-weight: bolder;
   text-align: center;
   font-family: "Roboto Slab", "serif";
   margin-bottom: 10px;
- 
 }
-p{
+p {
   margin-bottom: 30px;
   text-align: center;
   color: #928686ec;
 }
 
-form .form-inner .form-group{
+form .form-inner .form-group {
   display: block;
   width: 300px;
   margin-bottom: 15px;
-  
 }
 
-  form .form-inner .form-group input{
+form .form-inner .form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: 0.4s;
+  text-align: center;
 
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    transition: 0.4s;
-    text-align: center;
-   
-    border-bottom: 1px solid  #f3610cec;
-    margin-bottom: 30px;
+  border-bottom: 1px solid #f3610cec;
 }
 
-  form .form-inner .form-group .icon{
-
-    background: url("https://img.icons8.com/material-outlined/24/000000/iphone--v2.png") no-repeat right;
+form .form-inner .form-group .icon {
+  background: url("https://img.icons8.com/material-outlined/24/000000/iphone--v2.png")
+    no-repeat right;
 }
-form .form-inner .form-group input:focus{
+form .form-inner .form-group input:focus {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-form .form-inner input[type = "submit"]{
+form > .form-inner > input[type="submit"] {
   display: inline-block;
   padding: 20px 15px;
   border-radius: 8px;
@@ -88,13 +84,6 @@ form .form-inner input[type = "submit"]{
   cursor: pointer;
   width: 300px;
   border: 1000px;
-  text-align:center;
+  text-align: center;
   background-color: #f3610cec;
-
-  
-  
-  
-  
-
 }
-
