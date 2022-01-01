@@ -1,13 +1,17 @@
 import React from "react";
+import { FaRoute } from "react-icons/fa";
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
 
 const SInput = styled.input<InputProps>`
+  display: block;
+  width: 100%;
   padding: 10px 15px;
-  flex: 1;
   background-color: #f8f8f8;
   border-radius: 8px;
   transition: 0.4s;
+  border: none;
+
   border-bottom: 1px solid #f3610cec;
 `;
 
@@ -16,6 +20,8 @@ const SWrapper = styled.div<SpaceProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: center;
+
   ${space}
 `;
 

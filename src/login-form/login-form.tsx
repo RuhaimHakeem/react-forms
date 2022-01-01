@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../button";
+import { Input } from "../input";
 
-const SFormInner = styled.form``;
 const SH2 = styled.h2`
   color: black;
   font-size: 50px;
@@ -23,7 +23,12 @@ const SFormGroup = styled.div`
   margin-bottom: 15px;
 `;
 
-const SInput = styled.input`
+const SForm = styled.form`
+  display: block;
+  position: relative;
+`;
+
+/*const SInput = styled.input`
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -34,7 +39,7 @@ const SInput = styled.input`
 
   border-bottom: 1px solid #f3610cec;
   margin-bottom: 30px;
-`;
+`;*/
 
 export const LoginForm: React.FC = () => {
   const submitHandler: React.FormEventHandler = (e) => {
@@ -43,13 +48,13 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <SForm onSubmit={submitHandler}>
       <SH2> Login </SH2>
       <SP>Login To Continue With The Process</SP>
       <SFormGroup>
-        <SInput required type="text" placeholder="Enter Phone Number " />
+        <Input required type="text" placeholder="Enter Phone Number " />
       </SFormGroup>
       <Button>Next</Button>
-    </form>
+    </SForm>
   );
 };
