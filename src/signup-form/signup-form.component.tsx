@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactEventHandler } from "react";
 import { Button } from "../button";
 import { Input } from "../input/input.component";
 import { FaMobile } from "react-icons/fa";
@@ -7,42 +7,45 @@ import styled from "styled-components";
 const SH2 = styled.h2`
   color: black;
   font-size: 50px;
-  font-weight: bolder;
-  text-align: center;
-  font-family: "Roboto Slab", "serif";
-  margin-bottom: 10px;
+  font-weight: bold;
+  margin: 0;
 `;
 const SP = styled.p`
-  margin-bottom: 30px;
-  text-align: center;
   color: #928686ec;
 `;
 
 const SFormGroup = styled.div`
-  display: block;
-  width: 300px;
-  margin-bottom: 15px;
+  margin-top: 32px;
+  width: 400px;
 `;
 
 const SForm = styled.form`
-  display: block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 `;
 
 export const SignUpForm: React.FC = () => {
+  const submitHandler: React.FormEventHandler = (e) => {
+    alert("Registered");
+    e.preventDefault();
+  };
+
   return (
-    <SForm>
+    <SForm onSubmit={submitHandler}>
       <SH2> Sign up </SH2>
       <SP>Sign up to continue with the process</SP>
-
       <SFormGroup>
         <Input
           type="text"
           placeholder="Enter Phone Number"
           rightIcon={<FaMobile />}
+          required
         />
-        <Input mt="16px" type="text" placeholder="First name " />
-        <Input mt="16px" type="text" placeholder="Last name " />
+        <Input mt="16px" type="text" placeholder="First name" required />
+        <Input mt="16px" type="text" placeholder="Last name" required />
       </SFormGroup>
       <Button mt="24px">Next</Button>
     </SForm>

@@ -12,10 +12,8 @@ export const Button = styled.button<SpaceProps>`
   font-weight: 700;
   cursor: pointer;
   width: 300px;
-  border: 1000px;
+  border: none;
   text-align: center;
   background-color: #f3610cec;
-  margin-left: 400px;
-
   ${space}
 `;

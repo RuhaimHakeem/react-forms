@@ -1,14 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0px;
-  box-sizing: border-box;
+body {
   font-family: "Quicksand";
-  transform: scale(1.03);
-  transform-origin: 1 1;
-  margin-bottom: 40px;
 }
 
 /*input,
@@ -19,13 +13,13 @@ button {
   outline: none;
 }*/
 
-.App {
+/* .App {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
-}
+} */
 
 /*.form {
   display: block;
