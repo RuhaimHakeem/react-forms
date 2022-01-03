@@ -1,18 +1,9 @@
 import React, { ReactEventHandler } from "react";
 import { Button } from "../button";
-import { Input } from "../input/input.component";
+import { Input } from "../input";
 import { FaMobile } from "react-icons/fa";
 import styled from "styled-components";
-
-const SH2 = styled.h2`
-  color: black;
-  font-size: 50px;
-  font-weight: bold;
-  margin: 0;
-`;
-const SP = styled.p`
-  color: #928686ec;
-`;
+import { Heading, SubHeading } from "../text";
 
 const SFormGroup = styled.div`
   margin-top: 32px;
@@ -24,7 +15,7 @@ const SForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 95vh;
 `;
 
 export const SignUpForm: React.FC = () => {
@@ -35,8 +26,8 @@ export const SignUpForm: React.FC = () => {
 
   return (
     <SForm onSubmit={submitHandler}>
-      <SH2> Sign up </SH2>
-      <SP>Sign up to continue with the process</SP>
+      <Heading> Sign up </Heading>
+      <SubHeading>Sign up to continue with the process</SubHeading>
       <SFormGroup>
         <Input
           type="text"

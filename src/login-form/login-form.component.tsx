@@ -2,30 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../button";
 import { Input } from "../input";
-
-const SH2 = styled.h2`
-  color: black;
-  font-size: 50px;
-  font-weight: bolder;
-  text-align: center;
-  font-family: "Roboto Slab", "serif";
-  margin-bottom: 10px;
-`;
-const SP = styled.p`
-  margin-bottom: 30px;
-  text-align: center;
-  color: #928686ec;
-`;
+import { Heading, SubHeading } from "../text";
+import { FaMobile } from "react-icons/fa";
 
 const SFormGroup = styled.div`
-  display: block;
-  width: 300px;
-  margin-bottom: 15px;
+  margin-top: 32px;
+  width: 400px;
 `;
 
 const SForm = styled.form`
-  display: block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
 `;
 
 export const LoginForm: React.FC = () => {
@@ -36,12 +26,18 @@ export const LoginForm: React.FC = () => {
 
   return (
     <SForm onSubmit={submitHandler}>
-      <SH2> Login </SH2>
-      <SP>Login To Continue With The Process</SP>
+      <Heading> Login </Heading>
+      <SubHeading>Login To Continue With The Process</SubHeading>
       <SFormGroup>
-        <Input required type="text" placeholder="Enter Phone Number " />
+        <Input
+          mt="16px"
+          required
+          type="text"
+          placeholder="Enter Phone Number "
+          rightIcon={<FaMobile />}
+        />
       </SFormGroup>
-      <Button>Next</Button>
+      <Button mt="24px">Next</Button>
     </SForm>
   );
 };
