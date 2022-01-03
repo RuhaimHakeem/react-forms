@@ -28,19 +28,6 @@ const SForm = styled.form`
   position: relative;
 `;
 
-/*const SInput = styled.input`
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  transition: 0.4s;
-  text-align: center;
-
-  border-bottom: 1px solid #f3610cec;
-  margin-bottom: 30px;
-`;*/
-
 export const LoginForm: React.FC = () => {
   const submitHandler: React.FormEventHandler = (e) => {
     alert("Submitted");
