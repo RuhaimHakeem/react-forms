@@ -1,9 +1,9 @@
-import React, { ReactEventHandler } from "react";
-import { Button } from "../button";
-import { Input } from "../input";
+import React from "react";
 import { FaMobile } from "react-icons/fa";
 import styled from "styled-components";
-import { Heading, SubHeading } from "../text";
+import { Button } from "../button";
+import { Input } from "../input";
+import { Text } from "../text";
 
 const SFormGroup = styled.div`
   margin-top: 32px;
@@ -26,8 +26,8 @@ export const SignUpForm: React.FC = () => {
 
   return (
     <SForm onSubmit={submitHandler}>
-      <Heading> Sign up </Heading>
-      <SubHeading>Sign up to continue with the process</SubHeading>
+      <Text.Heading> Sign up </Text.Heading>
+      <Text.SubHeading>Sign up to continue with the process</Text.SubHeading>
       <SFormGroup>
         <Input
           type="text"

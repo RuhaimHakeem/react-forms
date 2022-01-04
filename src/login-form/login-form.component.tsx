@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../button";
 import { Input } from "../input";
-import { Heading, SubHeading } from "../text";
+import { Text } from "../text";
 import { FaMobile } from "react-icons/fa";
 
 const SFormGroup = styled.div`
@@ -26,8 +26,8 @@ export const LoginForm: React.FC = () => {
 
   return (
     <SForm onSubmit={submitHandler}>
-      <Heading> Login </Heading>
-      <SubHeading>Login To Continue With The Process</SubHeading>
+      <Text.Heading> Login </Text.Heading>
+      <Text.SubHeading>Login To Continue With The Process</Text.SubHeading>
       <SFormGroup>
         <Input
           mt="16px"
