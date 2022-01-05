@@ -15,7 +15,7 @@ const SForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  height: 80vh;
 `;
 
 export const SignUpForm: React.FC = () => {

@@ -14,7 +14,7 @@ const SForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  height: 80vh;
 `;
 
 const SInput = styled.input<SpaceProps>`
@@ -80,7 +80,9 @@ export const Verification: React.FC = () => {
       </SFormGroup>
       <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
       <Button mt="24px">Verify</Button>
-      <Text.SubHeading style={{ color: "red", marginTop: "10px" }}>
+      <Text.SubHeading
+        style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
+      >
         Resend OTP code
       </Text.SubHeading>
     </SForm>

@@ -3,6 +3,20 @@
 
 body {
   font-family: "Quicksand";
+  background-color: rgba(224, 224, 224, 0.5);
+}
+
+.Modal {
+  position: fixed;
+  left: 25%;
+  top: 15%;
+  bottom: 5%;
+  width: 40%;
+  border: 1px solid #011627;
+  border-radius: 1em;
+  box-shadow: -2px 5px 5px #fd9712;
+  background-color: #fdfffc;
+  color: #011627;
 }
 
 /*input,
