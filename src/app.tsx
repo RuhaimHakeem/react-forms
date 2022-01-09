@@ -1,40 +1,32 @@
 import { SignUpForm } from "./signup-form";
-import { LoginForm } from "./login-form";
-import { Verification } from "./verification-form";
 
 import { useState } from "react";
+import { LoginFormModal } from "./login-form";
 
 export const App: React.FC = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [isOpenLoginModal, setIsOpenLoginModal] = useState<boolean>(false);
 
   return (
     <div className="App">
       <button
         onClick={() => {
-          setOpenModal(true);
+          setIsOpenLoginModal(true);
         }}
       >
-        Open Modal
+        Open Login Modal
       </button>
-      {openModal && <LoginForm closeModal={setOpenModal} />}
-
-      {/* <button
+      <button
         onClick={() => {
-          setOpenModal(true);
+          //TODO: open the signup modal
         }}
       >
-        Open Modal
+        Open Signup Modal
       </button>
-      {openModal && <SignUpForm />} */}
-
-      {/* <button
-        onClick={() => {
-          setOpenModal(true);
-        }}
-      >
-        Open Modal
-      </button>
-      {openModal && <Verification />} */}
+      {/* TODO: Create a signup modal by using our modal component */}
+      <LoginFormModal
+        visible={isOpenLoginModal}
+        onClose={() => setIsOpenLoginModal(false)}
+      />
     </div>
   );
 };
