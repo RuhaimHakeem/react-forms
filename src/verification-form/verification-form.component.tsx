@@ -72,19 +72,23 @@ export const Verification: React.FC = () => {
   });
 
   return (
-    <SForm onSubmit={submitHandler}>
-      <Text.Heading> OTP Verification </Text.Heading>
-      <Text.SubHeading>This is to verify your phone number</Text.SubHeading>
-      <SFormGroup>
-        <VerificationInputs />
-      </SFormGroup>
-      <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
-      <Button mt="24px">Verify</Button>
-      <Text.SubHeading
-        style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
-      >
-        Resend OTP code
-      </Text.SubHeading>
-    </SForm>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <SForm onSubmit={submitHandler}>
+          <Text.Heading> OTP Verification </Text.Heading>
+          <Text.SubHeading>This is to verify your phone number</Text.SubHeading>
+          <SFormGroup>
+            <VerificationInputs />
+          </SFormGroup>
+          <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
+          <Button mt="24px">Verify</Button>
+          <Text.SubHeading
+            style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
+          >
+            Resend OTP code
+          </Text.SubHeading>
+        </SForm>
+      </div>
+    </div>
   );
 };

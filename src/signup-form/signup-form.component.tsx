@@ -25,20 +25,26 @@ export const SignUpForm: React.FC = () => {
   };
 
   return (
-    <SForm onSubmit={submitHandler}>
-      <Text.Heading> Sign up </Text.Heading>
-      <Text.SubHeading>Sign up to continue with the process</Text.SubHeading>
-      <SFormGroup>
-        <Input
-          type="text"
-          placeholder="Enter Phone Number"
-          rightIcon={<FaMobile />}
-          required
-        />
-        <Input mt="16px" type="text" placeholder="First name" required />
-        <Input mt="16px" type="text" placeholder="Last name" required />
-      </SFormGroup>
-      <Button mt="24px">Next</Button>
-    </SForm>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <SForm onSubmit={submitHandler}>
+          <Text.Heading> Sign up </Text.Heading>
+          <Text.SubHeading>
+            Sign up to continue with the process
+          </Text.SubHeading>
+          <SFormGroup>
+            <Input
+              type="text"
+              placeholder="Enter Phone Number"
+              rightIcon={<FaMobile />}
+              required
+            />
+            <Input mt="16px" type="text" placeholder="First name" required />
+            <Input mt="16px" type="text" placeholder="Last name" required />
+          </SFormGroup>
+          <Button mt="24px">Next</Button>
+        </SForm>
+      </div>
+    </div>
   );
 };
