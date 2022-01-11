@@ -2,6 +2,7 @@ import React, { memo, useCallback, useRef } from "react";
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
 import { Button } from "../button";
+import { Modal } from "../modal";
 import { Text } from "../text";
 
 const SFormGroup = styled.div`
@@ -30,7 +31,12 @@ const SInput = styled.input<SpaceProps>`
   ${space};
 `;
 
-export const Verification: React.FC = () => {
+interface Props {
+  visible: boolean;
+  onClose: () => void;
+}
+
+export const Verification: React.FC<Props> = ({ visible, onClose }) => {
   const submitHandler: React.FormEventHandler = (e) => {
     alert("Registered");
     e.preventDefault();
@@ -72,23 +78,31 @@ export const Verification: React.FC = () => {
   });
 
   return (
-    <div className="modalBackground">
-      <div className="modalContainer">
-        <SForm onSubmit={submitHandler}>
-          <Text.Heading> OTP Verification </Text.Heading>
-          <Text.SubHeading>This is to verify your phone number</Text.SubHeading>
-          <SFormGroup>
-            <VerificationInputs />
-          </SFormGroup>
-          <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
-          <Button mt="24px">Verify</Button>
-          <Text.SubHeading
-            style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
-          >
-            Resend OTP code
-          </Text.SubHeading>
-        </SForm>
+    <Modal visible={visible} onClose={onClose}>
+      <div className="closeButton">
+        <button
+          type="button"
+          onClick={() => {
+            onClose();
+          }}
+        >
+          X
+        </button>
       </div>
-    </div>
+      <SForm onSubmit={submitHandler}>
+        <Text.Heading> OTP Verification </Text.Heading>
+        <Text.SubHeading>This is to verify your phone number</Text.SubHeading>
+        <SFormGroup>
+          <VerificationInputs />
+        </SFormGroup>
+        <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
+        <Button mt="24px">Verify</Button>
+        <Text.SubHeading
+          style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
+        >
+          Resend OTP code
+        </Text.SubHeading>
+      </SForm>
+    </Modal>
   );
 };
