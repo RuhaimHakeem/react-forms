@@ -3,8 +3,8 @@ import { FaMobile } from "react-icons/fa";
 import styled from "styled-components";
 import { Button } from "../button";
 import { Input } from "../input";
-import { Text } from "../text";
 import { Modal } from "../modal";
+import { Text } from "../text";
 
 const SFormGroup = styled.div`
   margin-top: 32px;
@@ -22,10 +22,19 @@ const SForm = styled.form`
 interface Props {
   visible: boolean;
   onClose: () => void;
+  openVerificationModal: () => void;
+  closeSignupModal: () => void;
 }
 
-export const SignUpFormModal: React.FC<Props> = ({ visible, onClose }) => {
+export const SignUpFormModal: React.FC<Props> = ({
+  visible,
+  onClose,
+  openVerificationModal,
+  closeSignupModal,
+}) => {
   const submitHandler: React.FormEventHandler = (e) => {
+    closeSignupModal();
+    openVerificationModal();
     alert("Registered");
     e.preventDefault();
   };

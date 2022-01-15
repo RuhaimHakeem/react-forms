@@ -1,7 +1,6 @@
-import { SignUpFormModal } from "./signup-form";
-
 import { useState } from "react";
 import { LoginFormModal } from "./login-form";
+import { SignUpFormModal } from "./signup-form";
 import { Verification } from "./verification-form";
 
 export const App: React.FC = () => {
@@ -22,6 +21,8 @@ export const App: React.FC = () => {
       <LoginFormModal
         visible={isOpenLoginModal}
         onClose={() => setIsOpenLoginModal(false)}
+        openVerificationModal={() => setIsOpenVerificationModal(true)}
+        closeLoginModal={() => setIsOpenLoginModal(false)}
       />
       <button
         onClick={() => {
@@ -30,14 +31,14 @@ export const App: React.FC = () => {
       >
         Open Signup Modal
       </button>
+
       <SignUpFormModal
         visible={isOpenSignupModal}
         onClose={() => setIsOpenSignupModal(false)}
+        openVerificationModal={() => setIsOpenVerificationModal(true)}
+        closeSignupModal={() => setIsOpenSignupModal(false)}
       />
 
-      <button onClick={() => setIsOpenVerificationModal(true)}>
-        Open Verification Modal
-      </button>
       <Verification
         visible={isOpenVerificationModal}
         onClose={() => setIsOpenVerificationModal(false)}

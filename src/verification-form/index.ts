@@ -1,1 +1,1 @@
-export * from "./verification-form.component";
+export * from "./verification-form-modal.component";

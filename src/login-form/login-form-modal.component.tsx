@@ -5,6 +5,8 @@ import { Input } from "../input";
 import { Text } from "../text";
 import { FaMobile } from "react-icons/fa";
 import { Modal } from "../modal";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 
 const SFormGroup = styled.div`
   margin-top: 32px;
@@ -22,10 +24,19 @@ const SForm = styled.form`
 interface Props {
   visible: boolean;
   onClose: () => void;
+  openVerificationModal: () => void;
+  closeLoginModal: () => void;
 }
 
-export const LoginFormModal: React.FC<Props> = ({ onClose, visible }) => {
+export const LoginFormModal: React.FC<Props> = ({
+  onClose,
+  visible,
+  openVerificationModal,
+  closeLoginModal,
+}) => {
   const submitHandler: React.FormEventHandler = (e) => {
+    closeLoginModal();
+    openVerificationModal();
     alert("Submitted");
     e.preventDefault();
   };
