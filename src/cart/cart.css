@@ -12,7 +12,6 @@
   font-size: 15px;
 }
 .cart__total {
-  flex: 0.25;
   margin-left: 20px;
   padding: 20px;
   height: 240px;
@@ -46,14 +45,23 @@
   border-radius: 0;
   background: #fff;
   border: none;
+  cursor: pointer;
+}
+.cart__home {
+  display: flex;
 }
 
 .quantity input {
   border: none;
-  cursor: pointer;
+
   text-align: center;
   width: 30px;
   font-size: 20px;
   color: #000;
   font-weight: 600;
+}
+.price {
+  margin-top: 10px;
+  margin-left: 170px;
+  font-weight: bold;
 }
