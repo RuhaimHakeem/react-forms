@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { SCart } from "./cart-body.component";
+import "./cart.css";
 
 import { Button } from "../button";
 
 const SCartOrder = styled.div`
   position: relative;
-  right: 50px;
+  right: 100px;
   top: 200px;
 `;
 
@@ -33,3 +33,6 @@ export const CartOrder: React.FC = () => {
     </SCartOrder>
   );
 };
+// export const CartOrder: React.FC = () => {
+//   return <h1>Hello</h1>;
+// };

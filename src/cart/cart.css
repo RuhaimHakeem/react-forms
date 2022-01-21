@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -64,4 +64,98 @@
   margin-top: 10px;
   margin-left: 170px;
   font-weight: bold;
+}
+.total p {
+  margin-left: 250px;
+} */
+* {
+  margin: 0;
+  padding: 0;
+}
+.cart__home {
+  display: flex;
+}
+.cart__total p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.cart__total {
+  padding: 20px;
+  height: 240px;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  left: 20px;
+}
+.cart__page {
+  margin: 80px auto;
+}
+table {
+  width: 70%;
+}
+.cart__info {
+  display: flex;
+}
+th {
+  text-align: left;
+  padding: 5px;
+  font-weight: normal;
+  color: #928686ec;
+  text-align: center;
+
+  width: 25%;
+}
+
+td {
+  padding: 10px 5px;
+  text-align: center;
+}
+td img {
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+p {
+  margin-right: 10px;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.quantity button {
+  width: 45px;
+
+  font-weight: 600;
+  color: #000;
+  border-radius: 0;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+.quantity input {
+  border: none;
+
+  text-align: center;
+  width: 30px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+}
+.delete {
+  width: 50%;
+  cursor: pointer;
+  margin-left: 20px;
 }
