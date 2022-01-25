@@ -39,7 +39,7 @@ export const CartOrder: React.FC = () => {
       </SPara>
       <SLine />
 
-      <SPara>
+      <SPara fontWeight="bold">
         <span>Net Total:</span>
         <span>$500</span>
       </SPara>
