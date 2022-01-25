@@ -1,38 +1,50 @@
 import styled from "styled-components";
 import "./cart.css";
-
+import { SHeader } from "./cart-heading.component";
 import { Button } from "../button";
+import { SPara } from "./cart-paragraph.component";
 
 const SCartOrder = styled.div`
   position: relative;
   right: 100px;
-  top: 200px;
+`;
+
+const STotalItems = styled.div`
+  margin: 50px auto;
+`;
+
+const SLine = styled.div`
+  border-bottom: 1px solid rgb(190, 190, 190);
+  margin-bottom: 50px;
 `;
 
 export const CartOrder: React.FC = () => {
   return (
     <SCartOrder>
-      <div className="cart__total">
-        <p>
-          <span>Sub Total:</span>
-          <span>$500</span>
-        </p>
+      <SHeader>Order Summary</SHeader>
 
-        <p>
-          <span>Total Savings:</span>
-          <span>$500</span>
-        </p>
+      <SLine />
 
-        <p>
-          <span>Net Total:</span>
-          <span>$500</span>
-        </p>
+      <STotalItems>
+        <SPara fontWeight="bold">Items 4</SPara>
+      </STotalItems>
+      <SPara>
+        <span>Sub Total:</span>
+        <span>$500</span>
+      </SPara>
 
-        <Button> Proceed To checkout </Button>
-      </div>
+      <SPara>
+        <span>Total Savings:</span>
+        <span>$500</span>
+      </SPara>
+      <SLine />
+
+      <SPara>
+        <span>Net Total:</span>
+        <span>$500</span>
+      </SPara>
+
+      <Button mt="24px"> Proceed To checkout </Button>
     </SCartOrder>
   );
 };
-// export const CartOrder: React.FC = () => {
-//   return <h1>Hello</h1>;
-// };

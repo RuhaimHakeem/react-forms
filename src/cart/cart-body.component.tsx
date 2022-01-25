@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import "./cart.css";
+import { SPara } from "./cart-paragraph.component";
 
 interface Props {
   desc: string;
@@ -8,111 +9,85 @@ interface Props {
   total: Number;
 }
 
-// export const SCartcontainer = styled.div`
-//   max-width: 100%;
-//   margin: 0 auto;
-//   position: relative;
-//   left: 20px;
-// `;
+interface props {
+  marginLeft?: string;
+  width?: string;
+  cursor?: string;
+  FontWeight?: string;
+}
 
-// export const SCart = styled.div`
-//   display: flex;
-// `;
+const STd = styled.td<props>`
+  padding: 10px 5px;
+  text-align: center;
+  font-weight: ${(props) => props.FontWeight};
+`;
 
-// const SProduct = styled.div`
-//   display: flex;
-//   width: 100%;
-//   height: 200px;
-//   overflow: hidden;
-//   margin-bottom: 20px;
-// `;
+const SImage = styled.img<props>`
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  margin-left: ${(props) => props.marginLeft};
+  width: ${(props) => props.width};
+  cursor: ${(props) => props.cursor};
+`;
 
-// const SImg = styled.img`
-//   width: 300px;
-//   height: auto;
-//   object-fit: cover;
-// `;
+const SQuantity = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  width: 50%;
+  margin: 0 auto;
 
-// const SProducts = styled.div`
-//   flex: 0.75;
-// `;
+  & button {
+    width: 45px;
+    font-weight: 600;
+    color: #000;
+    border-radius: 0;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  & input {
+    border: none;
+    text-align: center;
+    width: 30px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+  }
+`;
 
-// const SProductinfo = styled.div`
-//   padding: 20px;
-//   width: auto;
-//   position: relative;
-// `;
-// const SSubtext = styled.p`
-//   margin-bottom: 10px;
-// `;
-
-// export const CartBody: React.FC = () => {
-//   return (
-//     <SCartcontainer>
-//       <div className="subHeads">
-//         <div className="product__details">
-//           <p>Product Details</p>
-//         </div>
-//         <p>Quantity</p>
-//         <p>Price</p>
-//         <p>Total</p>
-//       </div>
-//       <SCart>
-//         <SProducts>
-//           <SProduct>
-//             <SImg
-//               src="https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-//               alt=""
-//             />
-//             <SProductinfo>
-//               <SSubtext>New Shoes</SSubtext>
-//               <SSubtext>Good Pair of shoes</SSubtext>
-//             </SProductinfo>
-//             <div className="qtyBox">
-//               <div className="quantity">
-//                 <button type="button">-</button>
-//                 <input type="text" id="quantity" value="1" />
-//                 <button type="button">+</button>
-//               </div>
-//             </div>
-//             <div className="price">
-//               <p>RS.90000</p>
-//             </div>
-//             <div className="total">
-//               <p>RS.90000</p>
-//             </div>
-//           </SProduct>
-//         </SProducts>
-//       </SCart>
-//     </SCartcontainer>
-//   );
-// };
 export const CartBody: React.FC<Props> = (props) => {
   return (
     <tr>
-      <td>
-        <div className="cart__info">
-          <img src={require("./images/shoe.jpg")}></img>
-        </div>
-      </td>
-      <td>
-        {" "}
-        <div>
-          <p> {props.desc} </p>
-        </div>
-      </td>
-      <td>
-        <div className="quantity">
+      <STd>
+        <SImage src={require("./images/shoe.jpg")}></SImage>
+      </STd>
+      <STd>
+        <SPara> {props.desc} </SPara>
+      </STd>
+      <STd>
+        <SQuantity>
           <button type="button">-</button>
           <input type="text" id="quantity" value="1" />
           <button type="button">+</button>
-        </div>
-      </td>
-      <td>{props.price}</td>
-      <td>{props.total}</td>
-      <td>
-        <img src={require("./delete.png")} alt="" className="delete" />
-      </td>
+        </SQuantity>
+      </STd>
+
+      <STd FontWeight="bold">RS.{props.price}</STd>
+      <STd FontWeight="bold">RS.{props.total}</STd>
+
+      <STd>
+        <SImage
+          marginLeft="20px"
+          width="50%"
+          cursor="pointer"
+          src="https://img.icons8.com/dotty/80/000000/filled-trash.png"
+          alt=""
+        />
+      </STd>
     </tr>
   );
 };

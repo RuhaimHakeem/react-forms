@@ -3,49 +3,67 @@ import styled from "styled-components";
 import "./cart.css";
 import { CartBody } from "./cart-body.component";
 import { CartOrder } from "./cart-order.component";
-import { Button } from "../button";
+
+import { SHeader } from "./cart-heading.component";
+
+const SCart = styled.div`
+  display: flex;
+  margin: 80px auto;
+`;
+
+const SContainer = styled.div`
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  left: 20px;
+`;
+
+const STable = styled.table`
+  width: 70%;
+`;
+
+const STheader = styled.th`
+  text-align: left;
+  padding: 5px;
+  font-weight: normal;
+  color: #928686ec;
+  text-align: center;
+  width: 25%;
+`;
 
 export const Cart: React.FC = () => {
   const data = [
     { descirption: "nice shoes", price: 700, total: 500 },
     { descirption: "nice shoes", price: 700, total: 500 },
     { descirption: "nice shoes", price: 700, total: 500 },
+    { descirption: "nice shoes", price: 700, total: 500 },
   ];
 
-  const ruhaim = {
-    name: "Ruhaim",
-    age: 21,
-  };
-  const persons = [
-    { name: "ruhaim", age: 20 },
-    { name: "ruhaim", age: 20 },
-    { name: "ruhaim", age: 20 },
-  ];
   return (
-    <div className="cart__home">
-      <div className="container">
-        <div className="cart__page">
-          <table>
-            <tr>
-              <th>Product Details</th>
-              <th></th>
+    <SCart>
+      <SContainer>
+        <SHeader>Shopping Cart</SHeader>
 
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Total</th>
-            </tr>
-            {data.map((val) => (
-              <CartBody
-                desc={val.descirption}
-                price={val.price}
-                total={val.total}
-              />
-            ))}
-          </table>
-        </div>
-      </div>
+        <STable>
+          <tr>
+            <STheader>Product Details</STheader>
+            <STheader></STheader>
+
+            <STheader>Quantity</STheader>
+            <STheader>Price</STheader>
+            <STheader>Total</STheader>
+          </tr>
+          {data.map((val) => (
+            <CartBody
+              desc={val.descirption}
+              price={val.price}
+              total={val.total}
+            />
+          ))}
+        </STable>
+      </SContainer>
 
       <CartOrder />
-    </div>
+    </SCart>
   );
 };
