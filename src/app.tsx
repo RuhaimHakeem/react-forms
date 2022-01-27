@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { LoginFormModal } from "./login-form";
-import { SignUpFormModal } from "./signup-form";
-import { Verification } from "./verification-form";
+import { useCallback, useEffect, useState } from "react";
 import { Cart } from "./cart";
+import { LoginModal } from "./login-form";
+import { SignUpFormModal } from "./signup-form";
 
 export const App: React.FC = () => {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState<boolean>(false);
@@ -10,20 +9,16 @@ export const App: React.FC = () => {
   const [isOpenVerificationModal, setIsOpenVerificationModal] =
     useState<boolean>(false);
 
+  const openModal = useCallback(() => {
+    setIsOpenLoginModal(true);
+  }, [setIsOpenLoginModal]);
+
   return (
     <div className="App">
-      {/* <button
-        onClick={() => {
-          setIsOpenLoginModal(true);
-        }}
-      >
-        Open Login Modal
-      </button>
-      <LoginFormModal
+      <button onClick={openModal}>Open Login Modal</button>
+      <LoginModal
         visible={isOpenLoginModal}
         onClose={() => setIsOpenLoginModal(false)}
-        openVerificationModal={() => setIsOpenVerificationModal(true)}
-        closeLoginModal={() => setIsOpenLoginModal(false)}
       />
       <button
         onClick={() => {
@@ -40,7 +35,7 @@ export const App: React.FC = () => {
         closeSignupModal={() => setIsOpenSignupModal(false)}
       />
 
-      <Verification
+      {/* <Verification
         visible={isOpenVerificationModal}
         onClose={() => setIsOpenVerificationModal(false)}
       /> */}

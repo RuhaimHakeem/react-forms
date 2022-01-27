@@ -2,12 +2,10 @@ import React, { memo, useCallback, useRef } from "react";
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
 import { Button } from "../button";
-import { Modal } from "../modal";
 import { Text } from "../text";
 
 const SFormGroup = styled.div`
   margin-top: 32px;
-  width: 500px;
 `;
 
 const SForm = styled.form`
@@ -21,7 +19,7 @@ const SForm = styled.form`
 const SInput = styled.input<SpaceProps>`
   margin: 10px;
   height: 50px;
-  width: 55px;
+  width: 50px;
   border: none;
   border-width: 1px;
   border-radius: 10px;
@@ -32,14 +30,13 @@ const SInput = styled.input<SpaceProps>`
 `;
 
 interface Props {
-  visible: boolean;
-  onClose: () => void;
+  onSubmit: () => void;
 }
 
-export const Verification: React.FC<Props> = ({ visible, onClose }) => {
+export const VerificationForm: React.FC<Props> = ({ onSubmit }) => {
   const submitHandler: React.FormEventHandler = (e) => {
-    alert("Registered");
     e.preventDefault();
+    onSubmit();
   };
 
   const inputRefs = useRef<HTMLInputElement[]>([]);
@@ -78,31 +75,19 @@ export const Verification: React.FC<Props> = ({ visible, onClose }) => {
   });
 
   return (
-    <Modal visible={visible} onClose={onClose}>
-      <div className="closeButton">
-        <button
-          type="button"
-          onClick={() => {
-            onClose();
-          }}
-        >
-          X
-        </button>
-      </div>
-      <SForm onSubmit={submitHandler}>
-        <Text.Heading> OTP Verification </Text.Heading>
-        <Text.SubHeading>This is to verify your phone number</Text.SubHeading>
-        <SFormGroup>
-          <VerificationInputs />
-        </SFormGroup>
-        <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
-        <Button mt="24px">Verify</Button>
-        <Text.SubHeading
-          style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
-        >
-          Resend OTP code
-        </Text.SubHeading>
-      </SForm>
-    </Modal>
+    <SForm onSubmit={submitHandler}>
+      <Text.Heading> OTP Verification </Text.Heading>
+      <Text.SubHeading>This is to verify your phone number</Text.SubHeading>
+      <SFormGroup>
+        <VerificationInputs />
+      </SFormGroup>
+      <Text.SubHeading> Enter 6-digit code</Text.SubHeading>
+      <Button mt="24px">Verify</Button>
+      <Text.SubHeading
+        style={{ color: "red", marginTop: "10px", cursor: "pointer" }}
+      >
+        Resend OTP code
+      </Text.SubHeading>
+    </SForm>
   );
 };

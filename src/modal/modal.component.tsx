@@ -1,17 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const SModal = styled.div<{ visible: boolean }>`
+interface SModalProps {
+  visible: boolean;
+}
+
+const SModal = styled.div<SModalProps>`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  display: grid;
   justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
+  display: ${({ visible }) => (visible ? "grid" : "none")};
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transition: 0.3s all;
 `;
@@ -32,7 +37,7 @@ interface Props {
   onClose: () => void;
 }
 
-export const Modal: React.FC<Props> = ({ visible, onClose, children }) => {
+export const Modal: React.FC<Props> = ({ visible, children, onClose }) => {
   return (
     <SModal onClick={onClose} visible={visible}>
       <SModalWrapper onClick={(e) => e.stopPropagation()}>
