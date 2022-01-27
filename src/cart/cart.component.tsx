@@ -3,7 +3,6 @@ import styled from "styled-components";
 import "./cart.css";
 import { CartBody } from "./cart-body.component";
 import { CartOrder } from "./cart-order.component";
-
 import { SHeader } from "./cart-heading.component";
 
 const SCart = styled.div`
@@ -31,19 +30,18 @@ const STheader = styled.th`
   width: 25%;
 `;
 
-export const Cart: React.FC = () => {
-  const data = [
-    { descirption: "nice shoes", price: 700, total: 500 },
-    { descirption: "nice shoes", price: 700, total: 500 },
-    { descirption: "nice shoes", price: 700, total: 500 },
-    { descirption: "nice shoes", price: 700, total: 500 },
-  ];
+const data = [
+  { descirption: "nice shoes", price: 700, total: 500 },
+  { descirption: "nice shoes", price: 700, total: 500 },
+  { descirption: "nice shoes", price: 700, total: 500 },
+  { descirption: "nice shoes", price: 700, total: 500 },
+];
 
+export const Cart: React.FC = () => {
   return (
     <SCart>
       <SContainer>
         <SHeader>Shopping Cart</SHeader>
-
         <STable>
           <tr>
             <STheader>Product Details</STheader>
