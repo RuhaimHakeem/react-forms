@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Cart } from "./cart";
 import { LoginModal } from "./login-form";
-import { SignUpFormModal } from "./signup-form";
+import { SignUpForm } from "./signup-form";
 
 export const App: React.FC = () => {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState<boolean>(false);
@@ -20,7 +20,8 @@ export const App: React.FC = () => {
         visible={isOpenLoginModal}
         onClose={() => setIsOpenLoginModal(false)}
       />
-      <button
+
+      {/* <button
         onClick={() => {
           setIsOpenSignupModal(true);
         }}
@@ -28,12 +29,10 @@ export const App: React.FC = () => {
         Open Signup Modal
       </button>
 
-      <SignUpFormModal
+      <SignUpForm
         visible={isOpenSignupModal}
         onClose={() => setIsOpenSignupModal(false)}
-        openVerificationModal={() => setIsOpenVerificationModal(true)}
-        closeSignupModal={() => setIsOpenSignupModal(false)}
-      />
+      /> */}
 
       {/* <Verification
         visible={isOpenVerificationModal}

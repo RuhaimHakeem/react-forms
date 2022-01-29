@@ -2,10 +2,12 @@ import React, { useCallback, useMemo, useState } from "react";
 import { LoginForm } from ".";
 import { Modal } from "../modal";
 import { VerificationForm } from "../verification-form";
+import { SignUpForm } from "../signup-form";
 
 enum Step {
   LoginPhone,
   LoginVerification,
+  SignUpForm,
 }
 
 interface Props {
@@ -14,9 +16,12 @@ interface Props {
 }
 
 export const LoginModal: React.FC<Props> = ({ onClose, visible }) => {
-  const [step, setStep] = useState<Step>(Step.LoginPhone);
+  const [step, setStep] = useState<Step>(Step.SignUpForm);
 
   const submitHandler = useCallback(() => {
+    if (step === Step.SignUpForm) {
+      setStep(Step.LoginPhone);
+    }
     if (step === Step.LoginPhone) {
       setStep(Step.LoginVerification);
     }
@@ -26,6 +31,7 @@ export const LoginModal: React.FC<Props> = ({ onClose, visible }) => {
   }, [step, setStep, onClose]);
 
   const RenderPage = useMemo(() => {
+    if (step === Step.SignUpForm) return SignUpForm;
     if (step === Step.LoginPhone) return LoginForm;
     else if (step === Step.LoginVerification) return VerificationForm;
     else return LoginForm;

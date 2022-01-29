@@ -16,8 +16,8 @@ const SModal = styled.div<SModalProps>`
   left: 0;
   z-index: 100;
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
-  display: ${({ visible }) => (visible ? "grid" : "none")};
   opacity: ${({ visible }) => (visible ? 1 : 0)};
+  display: ${({ visible }) => (visible ? "grid" : "none")};
   transition: 0.3s all;
 `;
 
